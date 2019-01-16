@@ -3,7 +3,6 @@
     <nb-container>
       <nb-header />
       <nb-grid>
-        <nb-row :size='3'>
           <flat-list
             :data="listViewData"
             :render-item="(item) => renderList(item)"
@@ -11,8 +10,8 @@
             :refreshing="refreshing"
             :tint-color="'#cccccc'"
             :key-extractor="(item) => item.toString()"
+            :style="{ height: 350, backgroundColor: 'skyblue' }"
           />
-        </nb-row>
       </nb-grid>
   </nb-container>
   </root>
@@ -22,6 +21,8 @@ import React from "react"
 import axios from "axios"
 import { AsyncStorage, ScrollView, RefreshControl, ListView, FlatList  } from "react-native"
 import { Container, Header, Content, List, ListItem, Text, Button, Icon, View, Root } from 'native-base'
+import { TabView, TabBar, SceneMap } from 'react-native-tab-view'
+
 
 
 export default {
@@ -46,7 +47,7 @@ export default {
       axios
         .get('https://thesimpsonsquoteapi.glitch.me/quotes')
         .then(res => {
-          this.listViewData.push(res.data[0].quote)
+          this.listViewData.unshift(res.data[0].quote)
           this.refreshing = false
         })
     },

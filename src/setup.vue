@@ -1,22 +1,19 @@
 <template>
-    <view class="container">
-      <view class="container">
-        <app-loading v-if="!isAppReady"> </app-loading>
-        <chat v-if="isAppReady"></chat>
-      </view>
-    </view>
+ <view class="container">
+    <app-loading v-if="!isAppReady"> </app-loading>
+    <app v-if="isAppReady"></app>
+  </view>
 </template>
 <script>
 import Vue from "vue-native-core";
 import { VueNativeBase } from "native-base";
-// import Vuelidate from 'vuelidate';
 import { AppLoading } from 'expo';
-import Chat from "./chat.vue";
-// registering all native-base components to the global scope of the Vue
+import App from "./App.vue";
+
 Vue.use(VueNativeBase);
-// Vue.use(Vuelidate);
+
 export default {
-  components: { Chat, AppLoading },
+  components: { App, AppLoading },
   data: function() {
     return {
       isAppReady: false
