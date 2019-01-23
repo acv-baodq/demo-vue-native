@@ -3,15 +3,15 @@
     <nb-container>
       <nb-header />
       <nb-grid>
-          <flat-list
-            :data="listViewData"
-            :render-item="(item) => renderList(item)"
-            :on-refresh="fetchMore"
-            :refreshing="refreshing"
-            :tint-color="'#cccccc'"
-            :key-extractor="(item) => item.toString()"
-            :style="{ height: 350, backgroundColor: 'skyblue' }"
-          />
+        <flat-list
+          :data="listViewData"
+          :render-item="(item) => renderList(item)"
+          :on-refresh="fetchMore"
+          :refreshing="refreshing"
+          :tint-color="'#cccccc'"
+          :key-extractor="(item) => item.toString()"
+          :style="{ height: 350, backgroundColor: 'skyblue' }"
+        />
       </nb-grid>
   </nb-container>
   </root>

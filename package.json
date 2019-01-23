@@ -9,9 +9,11 @@
   "dependencies": {
     "axios": "^0.18.0",
     "expo": "^27.0.1",
+    "giphy-js-sdk-core": "^1.0.6",
     "native-base": "^2.8.2",
     "react": "16.3.1",
     "react-native": "0.55.4",
+    "react-native-snap-carousel": "^3.7.5",
     "react-native-tab-view": "^1.3.1",
     "react-navigation": "^3.0.8",
     "react-navigator": "^0.0.0-0",
